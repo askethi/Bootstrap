@@ -20,6 +20,6 @@ public class UserController {
     @GetMapping("/")
     public String show(@RequestParam("username") String username, Model model) {
         model.addAttribute("user", userService.findByUsername(username));
-        return "user";
+        return "users/user";
     }
 }

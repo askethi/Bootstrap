@@ -61,7 +61,7 @@ public class AdminController {
     @GetMapping("/show")
     public String show(@RequestParam("id") int id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
-        return "user";
+        return "users/user";
     }
 
     @PostMapping("/delete")
