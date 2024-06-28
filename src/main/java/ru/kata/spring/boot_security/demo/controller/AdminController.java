@@ -29,14 +29,14 @@ public class AdminController {
         model.addAttribute("users", userService.listUsers());
         model.addAttribute("activeTab", "usersTable");
         model.addAttribute("roles", roleService.listRoles());
-        return "users/admin";
+        return "/users/admin";
     }
 
     @GetMapping("/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("activeTab", "addUser");
-        return "users/admin";
+        return "/users/admin";
     }
 
     @PostMapping()
@@ -49,7 +49,7 @@ public class AdminController {
     public String edit(Model model, @RequestParam("id") int id) {
         model.addAttribute("user", userService.getUserById(id));
         model.addAttribute("roles", roleService.listRoles());
-        return "users/admin";
+        return "/users/admin";
     }
 
     @PostMapping("/edit")
